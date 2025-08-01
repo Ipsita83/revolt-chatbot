@@ -1,0 +1,163 @@
+/* public/styles.css */
+/* Use Tailwind-like classes for a clean, modern look */
+
+:root {
+  --primary-color: #d9534f; /* Revolt's brand color */
+  --bg-color: #f7f9fb;
+  --card-bg-color: #fff;
+  --text-color: #333;
+  --subtle-text-color: #666;
+  --border-color: #e0e0e0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  width: 90%;
+  background-color: var(--card-bg-color);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.message-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fcfdff;
+}
+
+.message {
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background-color: var(--primary-color);
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.bot-message {
+  background-color: #e9ecef;
+  color: var(--text-color);
+  align-self: flex-start;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mic-button {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.mic-button:hover {
+  background-color: #c04944;
+  transform: scale(1.05);
+}
+
+.mic-button.recording {
+  background-color: #a73c38;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(217, 83, 79, 0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(217, 83, 79, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 83, 79, 0); }
+}
+
+.status-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--subtle-text-color);
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 0.75rem;
+  position: relative;
+  text-align: center;
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
